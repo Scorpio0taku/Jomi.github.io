@@ -1,0 +1,549 @@
+/* ===== PASSWORD PAGE STYLES ===== */
+.password-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0c2461 0%, #1e3799 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Background Image with Blue Tint */
+.password-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3;
+    filter: blur(2px) brightness(0.8);
+    z-index: 0;
+}
+
+.background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(12, 36, 97, 0.9) 0%, 
+        rgba(30, 55, 153, 0.8) 100%);
+    z-index: 1;
+}
+
+/* Music Control */
+.music-control {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.music-control:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Main Container */
+.password-container {
+    position: relative;
+    z-index: 2;
+    max-width: 500px;
+    width: 100%;
+    animation: fadeIn 1s ease;
+}
+
+/* Romantic Header */
+.romantic-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: slideDown 1s ease;
+}
+
+.heart-pulse {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+}
+
+.heart-pulse i {
+    text-shadow: 0 0 20px rgba(74, 144, 226, 0.7);
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 500;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+/* Password Card */
+.password-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 40px 30px;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+}
+
+.card-border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, 
+        rgba(74, 144, 226, 0.8), 
+        rgba(86, 204, 242, 0.8));
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, 
+        rgba(74, 144, 226, 0.3) 0%, 
+        rgba(74, 144, 226, 0) 70%);
+    animation: rotate 20s linear infinite;
+}
+
+.card-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Instruction */
+.instruction {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Input Container */
+.input-container {
+    margin-bottom: 30px;
+}
+
+.input-wrapper {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 18px 50px 18px 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.2rem;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.input-underline {
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        #4a90e2, 
+        transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.input-wrapper input:focus ~ .input-underline {
+    transform: scaleX(1);
+}
+
+.input-icons {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    gap: 10px;
+}
+
+.input-icons i {
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+/* Unlock Button */
+.unlock-button {
+    width: 100%;
+    padding: 18px 30px;
+    background: linear-gradient(135deg, #4a90e2, #56ccf2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.unlock-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+}
+
+.unlock-button:hover::before {
+    left: 100%;
+}
+
+.unlock-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(74, 144, 226, 0.4);
+}
+
+.unlock-button:active {
+    transform: translateY(0);
+}
+
+/* Birthday Message (Hidden initially) */
+.birthday-message {
+    margin: 30px 0;
+    animation: fadeIn 0.5s ease;
+}
+
+.birthday-message.hidden {
+    display: none;
+}
+
+.message-container {
+    background: rgba(74, 144, 226, 0.1);
+    border: 1px solid rgba(74, 144, 226, 0.3);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+}
+
+.message-content h3 {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.message-content h3 i {
+    color: #4a90e2;
+}
+
+.redirecting {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1rem;
+    font-weight: 300;
+    animation: pulseSoft 2s infinite;
+}
+
+/* Hint */
+.hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.95rem;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hint i {
+    color: #4a90e2;
+}
+
+/* Card Decoration */
+.card-decoration {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+}
+
+.ribbon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background: rgba(74, 144, 226, 0.3);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+.ribbon-2 {
+    top: 5px;
+    left: 10px;
+    transform: rotate(90deg);
+    background: rgba(86, 204, 242, 0.3);
+}
+
+/* Date Reminder */
+.date-reminder {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.date-bubble {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 25px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1.1rem;
+    backdrop-filter: blur(10px);
+}
+
+.date-bubble i {
+    color: #4a90e2;
+}
+
+/* Floating Elements */
+.floating-elements {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.floating-item {
+    position: absolute;
+    font-size: 1.8rem;
+    opacity: 0.7;
+    animation: floatAround 25s linear infinite;
+}
+
+.floating-item:nth-child(1) { 
+    top: 10%; 
+    left: 5%; 
+    animation-delay: 0s; 
+    animation-duration: 20s;
+}
+.floating-item:nth-child(2) { 
+    top: 20%; 
+    left: 80%; 
+    animation-delay: 5s; 
+    animation-duration: 25s;
+}
+.floating-item:nth-child(3) { 
+    top: 60%; 
+    left: 10%; 
+    animation-delay: 10s; 
+    animation-duration: 30s;
+}
+.floating-item:nth-child(4) { 
+    top: 80%; 
+    left: 70%; 
+    animation-delay: 15s; 
+    animation-duration: 22s;
+}
+.floating-item:nth-child(5) { 
+    top: 40%; 
+    left: 90%; 
+    animation-delay: 20s; 
+    animation-duration: 28s;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.8;
+    }
+}
+
+@keyframes pulseSoft {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes floatAround {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(100px, 100px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0, 200px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-100px, 100px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 600px) {
+    .password-page {
+        padding: 15px;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .password-card {
+        padding: 30px 20px;
+    }
+    
+    .input-wrapper input {
+        padding: 16px 45px 16px 15px;
+        font-size: 1.1rem;
+    }
+    
+    .unlock-button {
+        padding: 16px 25px;
+        font-size: 1.1rem;
+    }
+    
+    .message-content h3 {
+        font-size: 1.7rem;
+    }
+    
+    .floating-item {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .input-wrapper input {
+        padding: 14px 40px 14px 15px;
+    }
+    
+    .unlock-button {
+        padding: 14px 20px;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .button-text {
+        font-size: 1rem;
+    }
+}
