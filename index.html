@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Message For You</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Playfair+Display:wght@400;500&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+</head>
+<body class="password-page">
+    <!-- Background Image - Replace 'her_photo.jpg' with actual image -->
+    <div class="background-overlay"></div>
+    
+    <!-- Audio Element for Background Music -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="https://assets.mixkit.co/music/preview/mixkit-romantic-sunset-687.mp3" type="audio/mpeg">
+        <!-- Alternative calm music source -->
+    </audio>
+    
+    <!-- Music Control -->
+    <button class="music-control" id="musicToggle">
+        <i class="fas fa-volume-up"></i>
+    </button>
+    
+    <div class="password-container">
+        <!-- Romantic Header -->
+        <div class="romantic-header">
+            <div class="heart-pulse">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1 class="page-title">For Your Eyes Only</h1>
+            <p class="page-subtitle">A birthday surprise awaits</p>
+        </div>
+        
+        <!-- Main Card -->
+        <div class="password-card">
+            <div class="card-border">
+                <div class="card-glow"></div>
+            </div>
+            
+            <div class="card-content">
+                <!-- Instructional Line -->
+                <p class="instruction">Enter password here</p>
+                
+                <!-- Password Input -->
+                <div class="input-container">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            id="passwordInput" 
+                            placeholder=""
+                            autocomplete="off"
+                            autofocus
+                            spellcheck="false"
+                        >
+                        <div class="input-underline"></div>
+                        <div class="input-icons">
+                            <i class="fas fa-lock-open" id="lockIcon"></i>
+                            <i class="fas fa-key" id="keyIcon"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button id="submitBtn" class="unlock-button">
+                        <span class="button-text">Unlock the Gift</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Hidden Birthday Message (Initially hidden) -->
+                <div class="birthday-message hidden" id="birthdayMessage">
+                    <div class="message-container">
+                        <div class="message-content">
+                            <h3><i class="fas fa-gift"></i> Welcome and happy birthday</h3>
+                            <p class="redirecting">Preparing your special surprise...</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hint (Very subtle) -->
+                <div class="hint">
+                    <i class="fas fa-star"></i>
+                    <span>This moment is crafted just for you</span>
+                </div>
+            </div>
+            
+            <!-- Decorative Elements -->
+            <div class="card-decoration">
+                <div class="ribbon"></div>
+                <div class="ribbon ribbon-2"></div>
+            </div>
+        </div>
+        
+        <!-- Birthday Date Reminder -->
+        <div class="date-reminder">
+            <div class="date-bubble">
+                <i class="fas fa-calendar-heart"></i>
+                <span>December 31st</span>
+            </div>
+        </div>
+        
+        <!-- Floating Birthday Elements -->
+        <div class="floating-elements">
+            <div class="floating-item">🎈</div>
+            <div class="floating-item">🎁</div>
+            <div class="floating-item">✨</div>
+            <div class="floating-item">🌸</div>
+            <div class="floating-item">💙</div>
+        </div>
+    </div>
+    
+    <!-- Scripts -->
+    <script src="password.js"></script>
+</body>
+  </html>
